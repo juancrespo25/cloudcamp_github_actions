@@ -33,3 +33,7 @@ jobs:
         run: |
           echo $AWS_ACCESS_KEY_ID
           terraform plan
+
+      - name: apply
+        run: |
+          terraform apply -auto-approve
