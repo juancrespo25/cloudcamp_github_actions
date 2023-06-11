@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - "main"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy_ec2:
+    name: terraform🚀
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: init
+        run: |
+          terraform init
